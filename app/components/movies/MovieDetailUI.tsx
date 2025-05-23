@@ -1,13 +1,11 @@
 "use client";
 import {useRouter} from "next/navigation";
 import {Review} from "@/lib/features/reviews/reviewApiSlice";
-import {mockReview} from "@/lib/mockReview";
-import {useAppDispatch, useAppSelector} from "@/lib/hooks";
+import { useAppSelector} from "@/lib/hooks";
 import {selectMovies} from "@/lib/features/movies/movieSlice";
-import {Movie} from "@/lib/features/movies/movieApiSice";
-import ReviewUI from "@/app/components/reviews/ReviewUI";
+import {Movie} from "@/lib/features/movies/movieApiSice";;
 import {IconButton, Tooltip} from "@mui/material";
-import {ArrowBackIosNew, BackHand, InfoOutlined, KeyboardBackspace} from "@mui/icons-material";
+import {InfoOutlined, KeyboardBackspace} from "@mui/icons-material";
 import EditIcon from '@mui/icons-material/Edit';
 import styles from "./movies.module.css";
 import {useState} from "react";
@@ -18,7 +16,7 @@ import {selectReview} from "@/lib/features/reviews/reviewSlice";
 export default function MovieDetailUI({id}: {id: string})
 {
     const [show, setShow] = useState(false);
-    const [edit, setEdit] = useState(true);
+    const [edit] = useState(true);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -30,19 +28,6 @@ export default function MovieDetailUI({id}: {id: string})
 
     const moviesList = useAppSelector(selectMovies);
 
-    // const payload = {
-    //         "_id": "677a9a13a0176c1ae4f1f323",
-    //         "title": "Titanic2",
-    //         "director": {
-    //             "name": "James",
-    //             "phoneNo": "098783955",
-    //             "_id": "677a9a13a0176c1ae4f1f324"
-    //         },
-    //         "year": 2025,
-    //         "__v": 0
-    //     };
-    // const moviesUpdate = moviesList.map(item => item._id === payload._id? payload : item);
-    // console.log("moviesUpdate", moviesUpdate);
 
     const movie = moviesList.find((movie: Movie) => movie._id === id);
     const review = useAppSelector(selectReview).find((review: Review) => review.movie === id);
@@ -81,7 +66,7 @@ export default function MovieDetailUI({id}: {id: string})
                     </IconButton>
                 </Tooltip>
             </div>
-            <MovieForm movie={movie} show={show} handleClose={handleClose} handleShow={handleShow} edit={edit} />
+            <MovieForm movie={movie} show={show} handleClose={handleClose} edit={edit}/>
         </div>
     )
 }

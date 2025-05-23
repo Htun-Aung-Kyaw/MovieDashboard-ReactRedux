@@ -1,11 +1,8 @@
 "use client";
 
-import {Review} from "@/lib/features/reviews/reviewApiSlice";
 import {IconButton, Tooltip} from "@mui/material";
-import {DeleteOutlined, InfoOutlined} from "@mui/icons-material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import {DeleteOutlined, } from "@mui/icons-material";
 import EditIcon from "@mui/icons-material/Edit";
-import {mockMovies} from "@/lib/mockMovies";
 import {Movie} from "@/lib/features/movies/movieApiSice";
 import {useState} from "react";
 import ReviewForm from "@/app/components/reviews/ReviewForm";
@@ -28,16 +25,18 @@ export default function ReviewUI({movie, index}: {movie: Movie, index?: number})
     const review = reviewsList.find((review) =>  review?.movie === movie._id);
 
     function editHandler() {
-        review? setEdit(true) : setEdit(false);
+        if(review)
+            setEdit(true);
+        else
+            setEdit(false);
         handleShow();
-        // console.log(review);
     }
 
     function deleteHandler() {
         dispatch(deleteReview(review));
     }
 
-    let reviewClass = (!review || review.rating == "N/A")? styles.noReviews : '';
+    const reviewClass = (!review || review.rating == "N/A")? styles.noReviews : '';
 
     return (
         <>
@@ -61,7 +60,7 @@ export default function ReviewUI({movie, index}: {movie: Movie, index?: number})
                     </Tooltip>
                 </td>
             </tr>
-            <ReviewForm movie={movie} review={review} show={show} handleClose={handleClose} handleShow={handleShow} edit={edit}></ReviewForm>
+            <ReviewForm movie={movie} review={review} show={show} handleClose={handleClose} edit={edit}></ReviewForm>
         </>
     )
 }

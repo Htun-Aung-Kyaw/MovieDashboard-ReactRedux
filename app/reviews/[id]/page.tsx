@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 
 export default async function Page({params}: {params: {id: string}})
 {
-    let {id} = await params;
+    const {id} = await params;
     return (
         <div>
             review details {id}

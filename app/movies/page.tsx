@@ -2,7 +2,6 @@ import MovieListUI from "@/app/components/movies/MovieListUI";
 import NewMovie from "@/app/components/movies/NewMovie";
 import {Metadata} from "next";
 import styles from "@/app/components/movies/movies.module.css";
-import {mockMovies} from "@/lib/mockMovies";
 
 export default function Page()
 {

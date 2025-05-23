@@ -23,13 +23,11 @@ const MovieSchema = Yup.object().shape({
         .required('Required'),
 });
 
-export default function MovieForm({movie, show, handleClose, handleShow, edit, handleEdit} : {
+export default function MovieForm({movie, show, handleClose, edit} : {
     movie?: Movie;
     show: boolean;
     handleClose: () => void;
-    handleShow: () => void;
     edit?: boolean;
-    handleEdit?: () => void;
 }) {
 
     const initValues = !edit? {
@@ -58,7 +56,10 @@ export default function MovieForm({movie, show, handleClose, handleShow, edit, h
             year: values.year,
         }
         console.log(newMovie, edit);
-        edit? dispatch(updateMovie(newMovie)) : dispatch(addMovie(newMovie));
+        if(edit)
+            dispatch(updateMovie(newMovie))
+        else
+            dispatch(addMovie(newMovie));
     }
 
     return (

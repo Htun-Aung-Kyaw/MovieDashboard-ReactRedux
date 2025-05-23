@@ -6,7 +6,6 @@ import {IconButton, Tooltip} from "@mui/material";
 import {InfoOutlined,} from "@mui/icons-material";
 import {useAppDispatch, useAppSelector} from "@/lib/hooks";
 import {deleteMovie} from "@/lib/features/movies/movieSlice";
-import {mockReview} from "@/lib/mockReview";
 import styles from "./movies.module.css";
 import {deleteReview, selectReview} from "@/lib/features/reviews/reviewSlice";
 

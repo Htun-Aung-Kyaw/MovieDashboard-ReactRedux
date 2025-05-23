@@ -7,14 +7,6 @@ import {IconButton, Tooltip} from "@mui/material";
 import { AddCircle } from "@mui/icons-material";
 import {blue} from "@mui/material/colors";
 
-const mock = {
-    "_id": "677ab90ba3272de5d1479507",
-    "movie": "677a9a13a0176c1ae4f1f323",
-    "rating": 9,
-    "review": "Fantastic",
-    "__v": 0
-};
-
 export default function NewMovie() {
     const [show, setShow] = useState(false);
 
@@ -30,7 +22,7 @@ export default function NewMovie() {
                 </IconButton>
             </Tooltip>
 
-            <MovieForm show={show} handleClose={handleClose} handleShow={handleShow} />
+            <MovieForm show={show} handleClose={handleClose} />
         </div>
     )
 }

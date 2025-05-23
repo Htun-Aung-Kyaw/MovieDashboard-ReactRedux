@@ -1,10 +1,9 @@
 "use client";
 
 import {useState} from "react";
-import styles from "@/app/components/movies/movies.module.css";
 import {IconButton, Tooltip} from "@mui/material";
 import {AddCircle} from "@mui/icons-material";
-import {blue, blueGrey, red} from "@mui/material/colors";
+import {red} from "@mui/material/colors";
 import ReviewForm from "@/app/components/reviews/ReviewForm";
 
 export default function NewReview() {

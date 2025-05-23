@@ -1,14 +1,13 @@
 "use client";
 
-import {Review} from "@/lib/features/reviews/reviewApiSlice";
 import ReviewUI from "@/app/components/reviews/ReviewUI";
 import styles from "./reviews.module.css";
 import {Table} from "react-bootstrap";
-import {useAppDispatch, useAppSelector} from "@/lib/hooks";
+import {useAppSelector} from "@/lib/hooks";
 import {selectReview} from "@/lib/features/reviews/reviewSlice";
 import {selectMovies} from "@/lib/features/movies/movieSlice";
 
-export default function ReviewList({reviews}: {reviews?: Review[]}) {
+export default function ReviewList() {
     const reviewsList = useAppSelector(selectReview);
     const moviesList = useAppSelector(selectMovies);
     return (

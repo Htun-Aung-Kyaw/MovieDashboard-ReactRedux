@@ -12,14 +12,12 @@ const ReviewSchema = Yup.object().shape({
     rating: Yup.string().required('Required'),
 })
 
-export default function ReviewForm({movie, review, show, handleClose, handleShow, edit, handleEdit} : {
+export default function ReviewForm({movie, review, show, handleClose, edit} : {
     review?: Review;
     movie?: Movie;
     show: boolean;
     handleClose: () => void;
-    handleShow: () => void;
     edit?: boolean;
-    handleEdit?: () => void;
 }) {
 
     const dispatch = useAppDispatch();
@@ -41,7 +39,10 @@ export default function ReviewForm({movie, review, show, handleClose, handleShow
             rating: values.rating,
         }
         console.log(newReview);
-        edit? dispatch(updateReview(newReview)) : dispatch(addReview(newReview));
+        if(edit)
+            dispatch(updateReview(newReview))
+        else
+            dispatch(addReview(newReview));
     }
 
     return (

@@ -1,14 +1,12 @@
 "use client";
 
-import {Movie} from "@/lib/features/movies/movieApiSice";
 import MovieUI from "@/app/components/movies/MovieUI";
 import {Table} from "react-bootstrap";
 import styles from "./movies.module.css";
-import {useAppDispatch, useAppSelector} from "@/lib/hooks";
-import {loadMovies, selectMovies} from "@/lib/features/movies/movieSlice";
-import {useEffect} from "react";
+import { useAppSelector} from "@/lib/hooks";
+import { selectMovies} from "@/lib/features/movies/movieSlice";
 
-export default function MovieListUI({movies}: {movies?: Movie[]}) {
+export default function MovieListUI() {
 
     // const dispatch = useAppDispatch();
 

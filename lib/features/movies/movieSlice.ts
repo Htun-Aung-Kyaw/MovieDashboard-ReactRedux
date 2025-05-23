@@ -1,6 +1,6 @@
 import {createAppSlice} from "@/lib/createAppSlice";
 import {PayloadAction} from "@reduxjs/toolkit";
-import {Director, Movie} from "./movieApiSice";
+import { Movie} from "./movieApiSice";
 import {mockMovies} from "@/lib/mockMovies";
 
 export interface MovieState{

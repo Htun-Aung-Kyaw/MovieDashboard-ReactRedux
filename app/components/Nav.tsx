@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 import styles from "../styles/layout.module.css";
 import {IconButton, Tooltip} from "@mui/material";
 import {MovieCreation, TheatersOutlined} from "@mui/icons-material";
 import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
-import {blueGrey, blue, cyan, pink, red, brown} from '@mui/material/colors';
+import {blue, cyan, red} from '@mui/material/colors';
 
 
 export const Nav = () => {
