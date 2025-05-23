@@ -70,5 +70,5 @@ export const reviewSlice = createAppSlice({
 ```
 ### Checkout Live Demo!
 
-[`MovieDashboard App`]([https://github.com/vercel/next.js/tree/canary/packages/create-next-app](https://movie-dashboard-react-redux.vercel.app/))
+[`MovieDashboard App`]([https://movie-dashboard-react-redux.vercel.app/])
 
