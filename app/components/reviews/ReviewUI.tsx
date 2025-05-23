@@ -8,7 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import {mockMovies} from "@/lib/mockMovies";
 import {Movie} from "@/lib/features/movies/movieApiSice";
 import {useState} from "react";
-import EditForm from "@/app/components/reviews/EditForm";
+import ReviewForm from "@/app/components/reviews/ReviewForm";
 import {useAppDispatch, useAppSelector} from "@/lib/hooks";
 import {deleteReview, selectReview} from "@/lib/features/reviews/reviewSlice";
 import styles from './reviews.module.css';
@@ -61,7 +61,7 @@ export default function ReviewUI({movie, index}: {movie: Movie, index?: number})
                     </Tooltip>
                 </td>
             </tr>
-            <EditForm movie={movie} review={review} show={show} handleClose={handleClose} handleShow={handleShow} edit={edit}></EditForm>
+            <ReviewForm movie={movie} review={review} show={show} handleClose={handleClose} handleShow={handleShow} edit={edit}></ReviewForm>
         </>
     )
 }

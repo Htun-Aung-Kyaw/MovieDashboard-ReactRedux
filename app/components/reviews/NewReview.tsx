@@ -5,7 +5,7 @@ import styles from "@/app/components/movies/movies.module.css";
 import {IconButton, Tooltip} from "@mui/material";
 import {AddCircle} from "@mui/icons-material";
 import {blue, blueGrey, red} from "@mui/material/colors";
-import EditForm from "@/app/components/reviews/EditForm";
+import ReviewForm from "@/app/components/reviews/ReviewForm";
 
 export default function NewReview() {
     const [show, setShow] = useState(false);
@@ -23,7 +23,7 @@ export default function NewReview() {
                 </IconButton>
             </Tooltip>
 
-            <EditForm show={show} handleClose={handleClose} handleShow={handleShow} />
+            <ReviewForm show={show} handleClose={handleClose} handleShow={handleShow} />
         </div>
     )
 }

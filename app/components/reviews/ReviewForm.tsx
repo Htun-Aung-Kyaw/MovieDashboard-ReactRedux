@@ -12,7 +12,7 @@ const ReviewSchema = Yup.object().shape({
     rating: Yup.string().required('Required'),
 })
 
-export default function EditForm({movie, review, show, handleClose, handleShow, edit, handleEdit} : {
+export default function ReviewForm({movie, review, show, handleClose, handleShow, edit, handleEdit} : {
     review?: Review;
     movie?: Movie;
     show: boolean;
