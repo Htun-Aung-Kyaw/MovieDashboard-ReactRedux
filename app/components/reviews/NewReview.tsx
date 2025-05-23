@@ -22,7 +22,7 @@ export default function NewReview() {
                 </IconButton>
             </Tooltip>
 
-            <ReviewForm show={show} handleClose={handleClose} handleShow={handleShow} />
+            <ReviewForm show={show} handleClose={handleClose} />
         </div>
     )
 }
