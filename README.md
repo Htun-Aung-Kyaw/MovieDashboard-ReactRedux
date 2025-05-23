@@ -35,7 +35,7 @@ export const reviewExtracted = transformMovies.map((movie, index)=>({
 }))
 ```
 
-### Payload Creation
+### Using RTK
 
 ```
 export interface ReviewState{
