@@ -48,17 +48,7 @@ export const reviewExtracted = transformMovies.map((movie, index)=>({
         console.log(newReview);
         edit? dispatch(updateReview(newReview)) : dispatch(addReview(newReview));
 ```
+### Checkout Live Demo!
 
-
-
-
-## Deploy Your Own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
-
-## How to Use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+[`MovieDashboard App`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
