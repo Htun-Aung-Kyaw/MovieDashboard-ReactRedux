@@ -35,20 +35,40 @@ export const reviewExtracted = transformMovies.map((movie, index)=>({
 }))
 ```
 
-### Payload Creation and Action Dispatch
+### Payload Creation
 
 ```
-        const id = Math.random()+"";
-        const newReview: Review = {
-            _id: review?._id || id?.split('.')[1],
-            movie: movie?._id,
-            review: values.review,
-            rating: values.rating,
-        }
-        console.log(newReview);
-        edit? dispatch(updateReview(newReview)) : dispatch(addReview(newReview));
+export interface ReviewState{
+    items: Review[];
+    status: 'idle' | 'loading' | 'failed';
+}
+
+const initialState: ReviewState = {
+    items: mockReview,
+    status: 'idle',
+}
+
+export const reviewSlice = createAppSlice({
+    name: "reviews",
+    initialState,
+    reducers: (create) => ({
+        addReview: create.reducer((state, action: PayloadAction<Review>)=>{
+           state.items.push(action.payload);
+        }),
+        deleteReview: create.reducer((state, action: PayloadAction<Review | undefined>) => {
+            state.items = state.items.filter(item => item._id !== action.payload?._id);
+        }),
+        updateReview: create.reducer((state, action: PayloadAction<Review>) => {
+            state.items = state.items.map(item => item._id === action.payload._id? action.payload : item);
+        })
+    }),
+    selectors:{
+        selectReview: (state) => state.items,
+        selectStatus: (state) => state.status,
+    }
+})
 ```
 ### Checkout Live Demo!
 
-[`MovieDashboard App`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+[`MovieDashboard App`]([https://github.com/vercel/next.js/tree/canary/packages/create-next-app](https://movie-dashboard-react-redux.vercel.app/))
 
