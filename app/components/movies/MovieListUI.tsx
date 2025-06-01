@@ -1,7 +1,5 @@
 "use client";
 
-import MovieUI from "@/app/components/movies/MovieUI";
-import {Table} from "react-bootstrap";
 import styles from "./movies.module.css";
 import { useAppSelector} from "@/lib/hooks";
 import { selectMovies} from "@/lib/features/movies/movieSlice";
