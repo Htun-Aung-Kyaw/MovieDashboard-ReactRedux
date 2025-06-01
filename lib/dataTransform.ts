@@ -470,9 +470,11 @@ export const MoviesData = [
         }
 ];
 
-export const transformMovies = MoviesData.map(movie=>
-                                            Object.entries(movie).map(([key, value]) => [key[0].toLowerCase().concat(key.slice(1,)), value]))
-                                                    .map(item=> Object.fromEntries(item));
+export const transformMovies =
+            MoviesData.map(movie=>
+                Object.entries(movie).map(([key, value]) =>
+                    [key[0].toLowerCase().concat(key.slice(1,)), value]))
+                        .map(item=> Object.fromEntries(item));
 
 export const movieExtracted = transformMovies.map(movie=>({
         '_id' : (Math.random()+'').split('.')[1],
