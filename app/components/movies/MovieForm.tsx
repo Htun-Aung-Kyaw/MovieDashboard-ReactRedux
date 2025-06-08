@@ -19,8 +19,8 @@ const MovieSchema = Yup.object().shape({
         .max(50, 'Too Long!')
         .required('Required'),
     phoneNo:Yup.string()
-        .length(9, 'must have 9 numbers')
-        .required('Required'),
+        .matches(/^\d{9}$/, 'Phone number must be exactly 9 digits') // Key part: regex for 9 digits
+        .required('Phone number is required'),
 });
 
 export default function MovieForm({movie, show, handleClose, edit} : {
